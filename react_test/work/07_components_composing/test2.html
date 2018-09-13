@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>05_components_composing</title>
+</head>
+<body>
+
+  <div id="example"></div>
+
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <script type="text/javascript" src="../js/prop-types.js"></script>
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+  <script type="text/babel">
+
+   class App extends React.Component {
+
+     state = {
+       todos: ['吃饭','睡觉']
+     }
+
+     addTodo = (todo) => {
+       //获取当前状态
+       const {todos} = this.state
+       //修改状态
+       todos.unshift(todo)
+
+       //更新状态
+       this.setState(todos)
+     }
+
+     render(){
+
+       const {todos} = this.state
+       return(
+           <div>
+             <h1>Simple TODO List</h1>
+             <Add size={todos.length} addTodo={this.addTodo}/>
+             <List todos={todos}/>
+           </div>
+       )
+     }
+   }
+
+   class Add extends React.Component {
+
+      static propTypes = {
+        size: PropTypes.number.isRequired,
+        addTodo: PropTypes.func.isRequired
+      }
+
+     handleClick = () => {
+
+        const todo = this.refs.todo.value.trim()
+       if (!todo){
+          alert('请先输入')
+         return
+       }
+
+       this.props.addTodo(todo)
+
+       this.refs.todo.value = ''
+     }
+
+     render(){
+
+        const {size} = this.props
+       return(
+           <div>
+             <input type="text" ref="todo"/>
+             <button onClick={this.handleClick}>Add #{size}</button>
+           </div>
+       )
+     }
+   }
+
+
+   class List extends React.Component {
+
+     static propTypes = {
+       todos: PropTypes.array.isRequired
+     }
+     render(){
+        const {todos} = this.props
+       return(
+           <ul>
+             {
+               todos.map((todo,index) => {return <li key={index}>{todo}</li>})
+             }
+           </ul>
+       )
+     }
+   }
+
+   ReactDOM.render(<App/>,document.getElementById('example'))
+
+
+  </script>
+</body>
+</html>

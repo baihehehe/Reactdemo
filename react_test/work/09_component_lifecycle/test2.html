@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>10_ComponentLife</title>
+</head>
+<body>
+<div id="example"></div>
+
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<script type="text/babel">
+  /*
+  需求: 自定义组件
+    1. 让指定的文本做显示/隐藏的动画
+    2. 切换时间为2S
+    3. 点击按钮从界面中移除组件界面
+   */
+
+  class Animation extends React.Component {
+
+    state = {
+      opacity: 1
+    }
+
+    componentDidMount () {
+
+      this.timer = setInterval(() => {
+        //获取当前装态
+        let {opacity} = this.state
+        //修改状态
+        opacity -= 0.1
+        if (opacity <= 0){
+          opacity = 1
+        }
+
+        //更新状态
+        this.setState({opacity})
+      },200)
+
+    }
+
+    componentWillUnmount () {
+      clearInterval(this.timer)
+    }
+
+    handleClick  = () => {
+      ReactDOM.unmountComponentAtNode(document.getElementById('example'))
+    }
+
+    render(){
+
+      const {opacity} = this.state
+      return(
+          <div>
+            <h1 style={{opacity}}>React太难了！学不会</h1>
+            <button onClick={this.handleClick}>不活了</button>
+          </div>
+      )
+    }
+  }
+
+  ReactDOM.render(<Animation/>,document.getElementById('example'))
+
+</script>
+</body>
+</html>
