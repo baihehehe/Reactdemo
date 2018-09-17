@@ -1,105 +1,105 @@
 ##硅谷直聘项目
-  1.项目描述
-      1)此项目为一个前后台分离的招聘的SPA，包括前端应用和后端应用
-      2)包括用户注册/登录，大神/老板列表，实时聊天等模块
-      3)前端：使用React全家桶+ES6+Webpack等技术
-      4)后端：使用Node+express+mongodb+socketIO(实时通信)等技术
-      5)采用模块化，组件化，工程化的模式开发
+       1.项目描述
+            1)此项目为一个前后台分离的招聘的SPA，包括前端应用和后端应用
+            2)包括用户注册/登录，大神/老板列表，实时聊天等模块
+            3)前端：使用React全家桶+ES6+Webpack等技术
+            4)后端：使用Node+express+mongodb+socketIO(实时通信)等技术
+            5)采用模块化，组件化，工程化的模式开发
 
-   2.技术选型
-       1)前台数据展现/交互/组件化
-          a.react
-          b.react-router-dom
-          c.redux
-          d.antd-mobile
-       2)后台项目
-          a.node
-          b.express
-          c.mongodb
-          d.mongoose
-          e.socket.io
-       3)前后台交互
-          a.ajax请求
-              (1)axios
-              (2)async/await
-          b.测试API接口：postman
-       4)模块化
-          a.ES6
-          b.babel
-       5)项目构建/工程化
-          a.webpack
-          b.react-create-app
-          c.eslint
-       6)其他相关库
-          a.blueimp-md5
-          b.js-cookie
-          c.rc-queue-anim
+       2.技术选型
+           1)前台数据展现/交互/组件化
+              a.react
+              b.react-router-dom
+              c.redux
+              d.antd-mobile
+           2)后台项目
+              a.node
+              b.express
+              c.mongodb
+              d.mongoose
+              e.socket.io
+           3)前后台交互
+              a.ajax请求
+                  (1)axios
+                  (2)async/await
+              b.测试API接口：postman
+           4)模块化
+              a.ES6
+              b.babel
+           5)项目构建/工程化
+              a.webpack
+              b.react-create-app
+              c.eslint
+           6)其他相关库
+              a.blueimp-md5
+              b.js-cookie
+              c.rc-queue-anim
 
-    3.前端路由
-        1)注册
-           a. /register
-           b. register.jsx
-        2)登录
-           a. /login
-           b. login.jsx
-        3)主界面: main.jsx
-            a.老板主界面
-                (1) /laoban
-                (2) laoban.jsx
-            b.大神主界面
-                 (1) /dashen
-                 (2) dashen.jsx
-            c.消息列表界面
-                  (1) /message
-                  (2) message.jsx
-            d.个人中心界面
-                  (1) /personal
-                  (2) personal.jsx
-            e.老板信息完善界面
-                  (1) /laobaninfo
-                  (2) laoban-info.jsx
-            f.大神信息完善界面
-                  (1) /dasheninfo
-                  (2) dashen-info.jsx
-            g.聊天界面
-                  (1) /chat/:userid
-                  (2) chat.jsx
+        3.前端路由
+            1)注册
+               a. /register
+               b. register.jsx
+            2)登录
+               a. /login
+               b. login.jsx
+            3)主界面: main.jsx
+                a.老板主界面
+                    (1) /laoban
+                    (2) laoban.jsx
+                b.大神主界面
+                     (1) /dashen
+                     (2) dashen.jsx
+                c.消息列表界面
+                      (1) /message
+                      (2) message.jsx
+                d.个人中心界面
+                      (1) /personal
+                      (2) personal.jsx
+                e.老板信息完善界面
+                      (1) /laobaninfo
+                      (2) laoban-info.jsx
+                f.大神信息完善界面
+                      (1) /dasheninfo
+                      (2) dashen-info.jsx
+                g.聊天界面
+                      (1) /chat/:userid
+                      (2) chat.jsx
 
-    4.API接口
-        1.全程：前后台交互API接口
-        2.重要概念：
-          a.API(接口)
-            接口就是下面四个的集合
-          b.接口文档
-            1.url
-            2.请求方式
-            3.请求参数
-            4.返回示例
-          c.测试接口
-          d.对接口
-          e.调接口
-          f.联调
-          g.前后台分离
-            将一个项目分开写，前台写前台，后台写后台
-          h.mock(模拟)数据
-            这是前后台分离的优点，后台没有实现接口时，可以模拟数据
+        4.API接口
+            1.全程：前后台交互API接口
+            2.重要概念：
+              a.API(接口)
+                接口就是下面四个的集合
+              b.接口文档
+                1.url
+                2.请求方式
+                3.请求参数
+                4.返回示例
+              c.测试接口
+              d.对接口
+              e.调接口
+              f.联调
+              g.前后台分离
+                将一个项目分开写，前台写前台，后台写后台
+              h.mock(模拟)数据
+                这是前后台分离的优点，后台没有实现接口时，可以模拟数据
 
-    5.你能从此项目中学到什么
-        1.流程及开发方法
-          1)熟悉一个项目的开发流程
-          2)学会模块化，组件化，工程化的开发模式
-          3)掌握使用create-react-app脚手架初始化react项目开发
-          4)学会使用node+express+mongoose+mongodb
-        2.React插件或第三方库
-          1)学会使用react-router-dom开发单页应用
-          2)学会使用axios与后端进行数据交互
-          3)学会使用redux+react-redux+redux-thunk管理应用组件状态
-          4)学会使用antd-mobile组件库构建界面
-          5)学会使用mongoose操作mongodb数据库
-          6)学会使用express搭建后台路由
-          7)学会使用socket.io实现实时通信
-          8)学会使用blueimp-md5对密码进行MD5加密处理
-          9)学会使用js-cookie操作浏览器端cookie数据
+        5.你能从此项目中学到什么
+            1.流程及开发方法
+              1)熟悉一个项目的开发流程
+              2)学会模块化，组件化，工程化的开发模式
+              3)掌握使用create-react-app脚手架初始化react项目开发
+              4)学会使用node+express+mongoose+mongodb
+            2.React插件或第三方库
+              1)学会使用react-router-dom开发单页应用
+              2)学会使用axios与后端进行数据交互
+              3)学会使用redux+react-redux+redux-thunk管理应用组件状态
+              4)学会使用antd-mobile组件库构建界面
+              5)学会使用mongoose操作mongodb数据库
+              6)学会使用express搭建后台路由
+              7)学会使用socket.io实现实时通信
+              8)学会使用blueimp-md5对密码进行MD5加密处理
+              9)学会使用js-cookie操作浏览器端cookie数据
 
     6.npm常用命令
         * npm init  //初始化当前应用包, 生成package.json
