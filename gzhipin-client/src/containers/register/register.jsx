@@ -5,6 +5,7 @@ import Logo from "../../components/logo/logo";
 
 export default class Register extends Component {
 
+  //初始化数据
   state = {
     username: '',
     password: '',
